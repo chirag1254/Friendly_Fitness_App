@@ -1,0 +1,38 @@
+<LoginScreen>:
+    
+    MDFloatLayout:
+        MDTextFieldRound:
+            
+            id: login_email
+            hint_text : "Email"
+            size_hint: 0.8,0.1
+            pos_hint: {"top": 0.9,"right":0.9}
+            normal_color: (1,1,1,1)
+            color_active: (1,1,1,1)
+            
+
+        MDTextFieldRound:
+            
+            id: login_password
+            hint_text : "Password"
+            size_hint: 0.8,0.1
+            pos_hint: {"top": 0.75,"right":0.9}
+            normal_color: (1,1,1,1)
+            color_active: (1,1,1,1)
+            password: True
+            
+
+        MDFillRoundFlatButton:
+            text: "Sign up"
+            markup: True
+            size_hint:0.4,0.1
+            pos_hint: {"top": 0.6,"right":0.7}
+            on_release: app.my_firebase.sign_up(login_email.text,login_password.text)
+
+        MDLabel:
+            id:login_message
+            pos_hint: {"top": 0.5,"right":0.9}
+            halign:"center"
+            size_hint:0.8,0.1
+            theme_text_color: "Error"
+            

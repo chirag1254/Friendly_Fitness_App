@@ -1,0 +1,29 @@
+<AddFriendScreen>:
+    md_bg_color: app.theme_cls.primary_color
+    MDFloatLayout:
+        MDTextFieldRect:
+            id: add_friend_input
+            hint_text : "Enter friend id here"
+            size_hint: 0.8,0.1
+            pos_hint: {"top":0.8,"right":0.9}
+            normal_color: (1,1,1,1)
+            color_active: (1,1,1,1)
+        MDLabel:
+            id: add_friend_label
+            size_hint:0.8,0.1
+            pos_hint: {"top":.7,"right":0.9}
+            multiline: False
+            halign : "center"
+            theme_text_color: "Custom"
+            text_color : (1,1,1,1)
+        ImageButton:
+            source: "icons/back.png"
+            size_hint:0.5,0.15
+            pos_hint: {"top":.2,"right":0.5}
+            on_release:app.change_screen("setting_screen")
+        ImageButton:
+            source: "icons/next-1.png"
+            size_hint:0.5,0.15
+            pos_hint: {"top":.2,"right":1}
+            on_release: app.add_friend(add_friend_input.text)
+            

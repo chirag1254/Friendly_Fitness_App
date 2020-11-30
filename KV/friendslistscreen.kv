@@ -1,0 +1,19 @@
+<FriendsListScreen>:
+    MDFloatLayout:
+        ScrollView:
+            size_hint: 1,0.85
+            pos_hint: {"top":1,"right":1}
+            MDGridLayout:
+                cols:1
+                spaccing: 10,10
+                padding: 10,10
+                id:friends_list_grid
+                size_hint_y:None
+                height:self.minimum_height
+                row_default_height: "100dp"
+                row_force_default: True  
+        ImageButton:
+            size_hint: 0.3,0.15
+            pos_hint: {"top":.15,"left":1}
+            source:"icons/back.png"
+            on_release:app.change_screen("home_screen")

@@ -1,0 +1,24 @@
+<ChangeAvatarScreen>:
+    MDFloatLayout:
+        ScrollView:
+            size_hint: 1,0.9
+            pos_hint:{"top":1,"right":1}
+
+            MDGridLayout:
+                id : avatar_grid
+                cols:3
+                spacing: 10,10
+                padding: 10,10
+                pos_hint:{"top":0.15,"right":1}
+                size_hint_y: None
+                height:self.minimum_height
+                row_default_height: "80dp"
+                row_force_default: True
+        MDFillRoundFlatIconButton:
+            text : "Back"
+            icon: "step-backward-2"
+            id: back_button
+            size_hint: 1,0.1
+            pos_hint:{"top":0.1,"right":1}
+            on_release: app.change_screen("setting_screen")
+

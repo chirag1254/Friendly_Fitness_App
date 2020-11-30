@@ -1,0 +1,56 @@
+<HomeScreen>:
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_color
+        
+        MDLabel:
+            theme_text_color : 'Custom'
+            text_color : (1,1,1,1)
+            text: '12 Days Straek'
+            halign: "center"
+            pos_hint: {"top":1,"left":1}
+            size_hint:1,0.1
+            id: streak_label
+
+        ScrollView:
+            pos_hint:{"top":0.9,"left":1}
+            size_hint:1,0.75
+            MDGridLayout:
+                cols:1
+                id: banner_grid
+                spacing:2,2
+                size_hint_y:None
+                height:self.minimum_height
+                row_default_height:"100dp"
+                row_force_default:True
+        MDGridLayout:            
+            rows:1
+            spacing: 10
+            padding : 10,10
+            pos_hint:{"top":0.15,"right":1}
+            size_hint:1,0.15
+            ImageButton:
+                source:"icons/add.png"
+                on_release: app.change_screen("add_workout_screen")
+            ImageButton:
+                source:"icons/friends_list.png"
+                on_release:app.change_screen("freinds_list_screen")
+            ImageButton:
+                source:"icons/settings.png"
+                on_release: app.change_screen('setting_screen')
+            ImageButton:
+                source:'icons/logout.jpg'
+                on_release: app.logout()
+           
+                    
+                
+
+                
+                    
+                
+
+                    
+
+
+            
+
+

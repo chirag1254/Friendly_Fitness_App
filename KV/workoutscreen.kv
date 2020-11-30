@@ -1,0 +1,130 @@
+<AddWorkoutScreen>:
+    MDFloatLayout:
+        MDLabel: 
+            text : "select Workout Image"
+            halign: "center"
+            size_hint: 1,0.06
+            pos_hint: {"top":1,"right":1}
+        ScrollView:
+            size_hint:1,0.15
+            pos_hint: {"top":0.94,"right":1}
+            MDGridLayout:
+                rows: 1
+                size_hint_x:None
+                width: self.minimum_width
+                col_default_width: "80sp"
+                col_force_default: True
+                id: workout_image_grid
+        MDTextFieldRound: 
+            hint_text: "Brief Description"
+            normal_color: (0,0,1,0.5)
+            color_active: (1,1,1,1)
+            size_hint:0.8,0.1
+            pos_hint: {"top":0.75,"right":0.9}
+            id: breif_description
+        MDGridLayout: 
+            rows: 1
+            size_hint:0.8,0.15
+            pos_hint: {"top":0.60,"right":0.9}
+            ImageButton:
+                source: "icons/time.png"
+                on_release: 
+                    time_label.text_color = (0,0,1,1)
+                    app.option_choice = self.source
+                    distance_label.text_color = (0,0,0,1)
+                    sets_label.text_color = (0,0,0,1)
+            ImageButton:
+                source: "icons/distance.png"
+                on_release: 
+                    distance_label.text_color = (0,0,1,1)
+                    app.option_choice = self.source
+                    time_label.text_color = (0,0,0,1)
+                    sets_label.text_color = (0,0,0,1)
+            ImageButton:
+                source: "icons/sets.png"
+                on_release: 
+                    sets_label.text_color = (0,0,1,1)
+                    app.option_choice = self.source
+                    distance_label.text_color = (0,0,0,1)
+                    time_label.text_color = (0,0,0,1)
+        MDGridLayout: 
+            rows: 1
+            size_hint:0.8,0.15
+            pos_hint: {"top":0.50,"right":0.9}
+            MDLabel: 
+                halign: "center"
+                theme_text_color: "Custom"
+                
+                text: "Time"
+                id: time_label
+            MDLabel: 
+                halign: "center"
+                theme_text_color: "Custom"
+                
+                text: "distance"
+                id: distance_label
+            MDLabel: 
+                halign: "center"
+                theme_text_color: "Custom"
+                
+                text: "sets"
+                id: sets_label
+
+        TextInput:
+            size_hint:0.3,0.1
+            pos_hint: {"top":0.35,"right":0.4}
+            hint_text: "Quantity"
+            
+            id: quantity
+            on_text :
+                self.background_color = (1,1,1,1)
+        TextInput:
+            size_hint:0.3,0.1
+            pos_hint: {"top":0.35,"right":0.9}
+            hint_text: "Unit"
+           
+            id: units
+            on_text :
+                self.background_color = (1,1,1,1)
+        TextInput:
+            hint_text: "dd"
+            size_hint:0.2,0.1
+            pos_hint: {"top":0.22,"right":0.3}
+           
+            id: day
+            on_text :
+                self.background_color = (1,1,1,1)
+        TextInput:
+            hint_text: "mm"
+            size_hint:0.2,0.1
+            pos_hint: {"top":0.22,"right":0.6}
+            
+            id: month
+            on_text :
+                self.background_color = (1,1,1,1)
+        TextInput:
+            hint_text: "yy"
+            size_hint:0.2,0.1
+            pos_hint: {"top":0.22,"right":0.9}
+            
+            id: year
+            on_text :
+                self.background_color = (1,1,1,1)
+        ImageButton:
+            size_hint:0.3,0.15
+            pos_hint: {"top":0.16,"right":0.4}
+            source: "icons/back.png"
+            on_release: app.change_screen("home_screen")
+        ImageButton:
+            size_hint:0.3,0.15
+            pos_hint: {"top":0.16,"right":0.9}
+            source: "icons/next-1.png"
+            on_release: 
+                app.add_workout()
+        
+
+
+
+
+                
+

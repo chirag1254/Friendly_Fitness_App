@@ -1,0 +1,29 @@
+<SettingScreen>:
+    md_bg_color: app.theme_cls.primary_color
+    MDFloatLayout:
+        
+        MDLabel:
+            id: friend_id_label
+            halign: "center"
+            text : "friend id:"
+            size_hint: 1,0.1
+            pos_hint: {"top":1,"left":0.95}
+        MDFillRoundFlatIconButton:
+            size_hint:1,0.2
+            pos_hint: {"top":.8,"left":0.95}
+            icon: "icons/avatars/man.png"
+            text : "Change Avatar"
+            on_release: app.change_screen("change_avatar_screen")
+        MDFillRoundFlatIconButton:
+            size_hint: 1,0.2
+            pos_hint: {"top":.55,"left":0.95}
+            icon: "icons/add.png"
+            text : "Add A Friend"
+            on_release: app.change_screen("add_friend_screen")
+        MDIconButton:
+            size_hint:0.2,0.15
+            icon: "icons/back.png"
+            pos_hint: {"top":.2,"right":0.95}
+            on_release: app.change_screen('home_screen')
+            elevation: 15
+            

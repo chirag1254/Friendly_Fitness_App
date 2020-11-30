@@ -1,0 +1,34 @@
+<FriendWorkoutScreen>:
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_color
+        
+        MDLabel:
+            theme_text_color : 'Custom'
+            text_color : (1,1,1,1)
+            text: '0 days Straek!'
+            halign: "center"
+            pos_hint: {"top":1,"left":1}
+            size_hint:1,0.1
+            id: friend_streak_label
+
+        ScrollView:
+            pos_hint:{"top":0.9,"left":1}
+            size_hint:1,0.75
+            MDGridLayout:
+                cols:1
+                id: friend_banner_grid
+                spacing:2,2
+                size_hint_y:None
+                height:self.minimum_height
+                row_default_height:"100dp"
+                row_force_default:True
+        
+
+        ImageButton:
+            pos_hint:{"top":0.15,"right":1}
+            size_hint:1,0.15
+            source:"icons/back.png"
+            on_release: app.change_screen('freinds_list_screen')
+           
+                    
+                
